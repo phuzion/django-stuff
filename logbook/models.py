@@ -20,7 +20,7 @@ class Contact(models.Model):
         return self.name
     received = models.CharField(max_length=10)
     sent = models.CharField(max_length=10)
-    time = modes.DateTimeField()
+    time = models.DateTimeField()
     operator = models.ForeignKey(User)
     mode = models.CharField(max_length=3, choices=MODE_CHOICES)
     frequency = models.FloatValue(max_digits=10, decimal_places=2, help_text="Frequency of the contact in KHz")
