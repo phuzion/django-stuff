@@ -11,16 +11,14 @@ MODE_CHOICES = (
     ('OTH', 'Other'),
 )
 
-
-
 # Create your models here.
 class Contact(models.Model):
     callsign = models.CharField(max_length=8)
     def __unicode__(self):
-        return self.name
+        return self.callsign
     received = models.CharField(max_length=10)
     sent = models.CharField(max_length=10)
     time = models.DateTimeField()
     operator = models.ForeignKey(User)
     mode = models.CharField(max_length=3, choices=MODE_CHOICES)
-    frequency = models.FloatValue(max_digits=10, decimal_places=2, help_text="Frequency of the contact in KHz")
+    frequency = models.DecimalField(max_digits=10, decimal_places=2, help_text="Frequency of the contact in KHz")
