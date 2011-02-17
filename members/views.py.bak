@@ -1,0 +1,12 @@
+from django.template import Context, loader
+from members.models import Member
+from django.http import HttpResponse
+
+def index(request):
+    members_list = Member.objects.all()
+    t = loader.get_template('members/index.html')
+    c = Context({
+        'members_list': members_list,
+    })
+    return HttpResponse(t.render(c))
+

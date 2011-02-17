@@ -1,0 +1,22 @@
+{% block content %}
+    <table cellspacing="5" border="2">
+  <tbody>
+  <tr align="center">
+<td width="25%">
+      <h2>Name</h2></td>
+<td width="25%">
+      <h2>Callsign</h2></td>
+<td width="25%">
+      <h2>License</h2></td>
+<td width="25%">
+      <h2>Office</h2></td></tr>
+        {% for member in object_list %}
+	<tr align="center">
+	<td><p>{{ member.name }}</p></td>
+	<td>{{ member.callsign }}</td>
+	<td><p>{{ member.get_license_display }}</p></td>
+	<td><p>{{ member.get_office_display }}</p></td></tr>
+        {% endfor %}
+    </tbody></table>
+{% endblock %}
+
