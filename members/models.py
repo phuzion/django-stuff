@@ -19,6 +19,7 @@ OFFICE_CHOICES = (
     ('PM', 'Prospective Member'),
     ('NA', 'Non Associate'),
     ('AS', 'Associate'),
+    ('FC', 'Flux Capacitor Maintenance Dude'),
 )
 
 # Create your models here.
